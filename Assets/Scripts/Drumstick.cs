@@ -7,6 +7,9 @@ public class Drumstick : MonoBehaviour
 
     private Vector3 previousPosition;
     private float currentSpeed = 0f;
+    public GameObject hitEffectPrefab;
+    private float lastHitTime = 0f;
+    public float hitCooldown = 0.2f;
 
     void Start()
     {
@@ -23,6 +26,10 @@ public class Drumstick : MonoBehaviour
     {
         if (other.CompareTag("Drum"))
         {
+            if (Time.time - lastHitTime < hitCooldown)
+                return;
+
+            lastHitTime = Time.time;
 
             AudioSource drumSound = other.GetComponent<AudioSource>();
             if (drumSound != null && drumSound.clip != null)
@@ -41,6 +48,20 @@ public class Drumstick : MonoBehaviour
 
                 OVRInput.SetControllerVibration(1.0f, vibrationStrength, whichHand);
                 StartCoroutine(StopVibration(vibrationDuration));
+
+                if (hitEffectPrefab != null)
+                {
+                    Vector3 hitPoint = other.ClosestPoint(transform.position);
+                    Quaternion rotation = Quaternion.LookRotation(Vector3.up);
+                    GameObject effect = Instantiate(hitEffectPrefab, hitPoint, rotation);
+
+                    // 🎯 타격 세기 기반으로 축소 (현재 크기가 최대)
+                    Vector3 baseScale = hitEffectPrefab.transform.localScale;
+                    float scaleRatio = Mathf.Clamp(currentSpeed / 5f, 0.1f, 1.0f);
+                    effect.transform.localScale = baseScale * scaleRatio;
+
+                    Destroy(effect, 1f); // 자동 제거
+                }
             }
         }
     }
