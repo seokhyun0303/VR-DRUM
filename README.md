@@ -1,6 +1,7 @@
 # VR-Drum
 
 ## Overview
+![Demo2](gitdrum.gif)
 This project involves implementing a virtual drum system and comparing the levels of immersion when users experience different combinations of sensory inputs.
 I presented 10 users with 4 different levels of immersion and measured their immersion on a scale from 1 to 10.
 
