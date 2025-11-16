@@ -21,6 +21,7 @@ I presented 10 users with 4 different levels of immersion and measured their imm
 - Ver2: Visual + Auditory + Tactile (sound + vibration upon impact)
 - Ver3: Visual + Auditory + Tactile (Animation effects added)
 - Ver4: Visual + Auditory + Tactile (Added animation + sound pressure vibration effect)
+
 Ver.1-3 offered a more diverse sensory experience, increasing immersion. However, Ver.4 attempted to enhance the impact (sound pressure) through vibration, but user reviews declined significantly.
 Sound pressure is a sensation felt throughout the entire body, and controller vibration not only failed to adequately convey the experience, but also disrupted the vibration experience of existing drum parts.
 
