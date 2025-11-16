@@ -18,6 +18,8 @@ Oculus Interacton SDK
 
 ## Results, Evaluation
 I presented 10 users with 4 different levels of immersion and measured their immersion on a scale from 1 to 10 and get averages of each levels.
+
+![Graph](drumgraph.png)
 - Ver1: Visual + Auditory (only sound provided when hitting)
 - Ver2: Visual + Auditory + Tactile (sound + vibration upon impact)
 - Ver3: Visual + Auditory + Tactile (Animation effects added)
